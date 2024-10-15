@@ -28,6 +28,30 @@ from transformers import AutoTokenizer
 import base64
 from pathlib import Path
 
+import subprocess
+
+# 执行 Git 命令
+result = subprocess.run(['git', 'status'], capture_output=True, text=True)
+
+# 输出结果
+print(result.stdout)  # 标准输出
+print(result.stderr)  # 标准错误
+
+# 执行 Git 命令
+result = subprocess.run(['git', 'clone', 'https://www.modelscope.cn/syq163/WangZeJun.git'], capture_output=True, text=True)
+
+# 输出结果
+print(result.stdout)  # 标准输出
+print(result.stderr)  # 标准错误
+
+# 执行 Git 命令
+result = subprocess.run(['git', 'clone', 'https://www.modelscope.cn/syq163/outputs.git'], capture_output=True, text=True)
+
+# 输出结果
+print(result.stdout)  # 标准输出
+print(result.stderr)  # 标准错误
+
+
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 MAX_WAV_VALUE = 32768.0
 
