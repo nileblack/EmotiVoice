@@ -30,6 +30,15 @@ from pathlib import Path
 
 import subprocess
 
+
+# 执行 Git 命令
+result = subprocess.run(['git', 'lfs', 'install'], capture_output=True, text=True)
+
+# 输出结果
+print(result.stdout)  # 标准输出
+print(result.stderr)  # 标准错误
+
+
 # 执行 Git 命令
 result = subprocess.run(['git', 'status'], capture_output=True, text=True)
 
